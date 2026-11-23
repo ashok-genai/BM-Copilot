@@ -41,7 +41,6 @@ BM-Copilot/
 │   │   ├── security/
 │   │   └── services/
 │   │
-│   ├── .env
 │   ├── .env.example
 │   ├── requirements.txt
 │   └── create_tables.py
@@ -71,7 +70,7 @@ BM-Copilot/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/ashok-genai/BM-Copilot.git
 cd BM-Copilot
 ```
 
@@ -134,30 +133,23 @@ The AI assistant uses predefined database functions to retrieve customer informa
 
 ## Architecture Overview
 
-```text
-User
-  |
-  v
-FastAPI Application
-  |
-  +---- Customer API
-  |        |
-  |        v
-  |      MySQL
-  |
-  +---- AI Assistant API
-           |
-           v
-       Groq LLM
-           |
-           v
-     Function Calling
-           |
-           v
-     Customer Services
-           |
-           v
-         MySQL
+```mermaid
+flowchart TD
+    A[User] --> B[FastAPI Application]
+
+    B --> C[Customer API]
+    B --> D[AI Assistant API]
+
+    C --> E[SQLAlchemy ORM]
+    E --> F[(MySQL Database)]
+
+    D --> G[Groq LLM]
+    G --> H[Function Calling]
+    H --> I[Customer Services]
+    I --> E
+
+    G --> J[AI Generated Response]
+    J --> A
 ```
 
 ## Project Status
