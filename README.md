@@ -1,3 +1,4 @@
+
 # BM Copilot – AI-Powered ERP and Manufacturing Assistant
 
 BM Copilot is an AI-powered ERP assistant designed to simplify customer data management and provide natural-language access to customer information.
@@ -47,6 +48,9 @@ BM-Copilot/
 │
 ├── database/
 ├── docs/
+│   ├── health-api.png
+│   ├── customer-api.png
+│   └── ai-assistant-api.png
 ├── frontend/
 ├── .gitignore
 └── README.md
@@ -151,6 +155,22 @@ flowchart TD
     G --> J[AI Generated Response]
     J --> A
 ```
+
+## API Documentation
+
+BM Copilot provides interactive API documentation through Swagger UI.
+
+### Health API
+
+![Health API](docs/health-api.png)
+
+### Customer Management API
+
+![Customer CRUD API](docs/customer-api.png)
+
+### AI Assistant API
+
+![AI Assistant API](docs/ai-assistant-api.png)
 
 ## Project Status
 
